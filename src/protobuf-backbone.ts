@@ -45,17 +45,7 @@ namespace PBB {
       class Class extends Backbone.Model {
         fullName = packageName + "." + message;
         defaults() {
-          let defaults = {};
-
-          Object.keys(message.fields).forEach((fieldName) => {
-            const field = message.fields[fieldName];
-
-            if (field.type === "string") {
-              defaults[field.name] = "";
-            }
-          });
-
-          return defaults;
+          return PBB.builder.defaults(message);
         }
       }
 

@@ -1,4 +1,4 @@
-protobuf.load("proto/defaults.proto.json", function(err, root) {
+protobuf.load("spec/proto/defaults.proto.json", function(err, root) {
 
   describe("PBB", function() {
     it("must be defined", function() {

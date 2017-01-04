@@ -1,9 +1,6 @@
 {
   "framework": "jasmine2",
   "serve_files": [
-    "spec/proto/**/*.json"
-  ],
-  "src_files": [
     "node_modules/jquery/dist/jquery.min.js",
     "node_modules/underscore/underscore-min.js",
     "node_modules/backbone/backbone-min.js",

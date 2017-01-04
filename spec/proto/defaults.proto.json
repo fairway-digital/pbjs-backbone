@@ -1,0 +1,24 @@
+{
+  "nested": {
+    "defaults": {
+      "nested": {
+        "TestMessage": {
+          "fields": {
+            "testField": {
+              "type": "string",
+              "id": 1
+            }
+          }
+        },
+        "TestMessage2": {
+          "fields": {
+            "testField2": {
+              "type": "string",
+              "id": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -20,15 +20,15 @@ namespace PBB.builder {
 
 namespace PBB {
 
-  let Messages = {};
+  let store = {};
 
   export function getModel(pkg, name) {
-    return Messages[pkg]["Type ." + pkg + "." + name];
+    return store[pkg]["Type ." + pkg + "." + name];
   }
 
   export function load(root) {
     let packageName = Object.keys(root.nested)[0];
-    Messages[packageName] = {};
+    store[packageName] = {};
 
     console.log("package name: ", packageName);
 
@@ -49,7 +49,7 @@ namespace PBB {
         }
       }
 
-      Messages[packageName][message] = Class;
+      store[packageName][message] = Class;
     });
   }
 

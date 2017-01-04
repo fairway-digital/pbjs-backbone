@@ -1,5 +1,6 @@
 {
   "framework": "jasmine2",
+  "before_tests": "pbjs spec/proto/defaults.proto -t json -o spec/proto/defaults.proto.json",
   "serve_files": [
     "node_modules/jquery/dist/jquery.min.js",
     "node_modules/underscore/underscore-min.js",

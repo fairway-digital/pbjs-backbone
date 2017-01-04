@@ -4,17 +4,29 @@
       "nested": {
         "TestMessage": {
           "fields": {
-            "testField": {
+            "testFieldString": {
               "type": "string",
               "id": 1
-            }
-          }
-        },
-        "TestMessage2": {
-          "fields": {
-            "testField2": {
-              "type": "string",
-              "id": 1
+            },
+            "testFieldByte": {
+              "type": "bytes",
+              "id": 2
+            },
+            "testFieldBool": {
+              "type": "bool",
+              "id": 3
+            },
+            "testFieldDouble": {
+              "type": "double",
+              "id": 4
+            },
+            "testFieldFloat": {
+              "type": "float",
+              "id": 5
+            },
+            "testFieldInt32": {
+              "type": "int32",
+              "id": 6
             }
           }
         }

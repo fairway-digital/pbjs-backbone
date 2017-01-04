@@ -11,6 +11,13 @@ namespace PBB.builder {
       if (field.type === "string") {
         defaults[field.name] = "";
       }
+      else if (field.type === "bool") {
+        defaults[field.name] = false;
+      }
+      else if (field.type === "double"
+      || field.type === "float" || field.type === "int32") {
+        defaults[field.name] = 0;
+      }
     });
 
     return defaults;

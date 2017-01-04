@@ -24,7 +24,11 @@ protobuf.load("spec/proto/defaults.proto.json", function(err, root) {
         });
 
         it("whith defaults correctly initialized", function() {
-          expect(testMessage.get("testField")).toBe("");
+          expect(testMessage.get("testFieldString")).toBe("");
+          expect(testMessage.get("testFieldBool")).toBe(false);
+          expect(testMessage.get("testFieldDouble")).toBe(0);
+          expect(testMessage.get("testFieldFloat")).toBe(0);
+          expect(testMessage.get("testFieldInt32")).toBe(0);
         });
       });
     });

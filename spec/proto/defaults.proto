@@ -1,10 +1,11 @@
-package defaults;
 syntax = "proto3";
+package defaults;
 
 message TestMessage {
-		string test_field = 1;
+		string test_field_string = 1;
+		bool test_field_bool = 3;
+		double test_field_double = 4;
+		float test_field_float = 5;
+		int32 test_field_int32 = 6;
 }
 
-message TestMessage2 {
-		string test_field2 = 1;
-}

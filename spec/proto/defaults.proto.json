@@ -8,10 +8,6 @@
               "type": "string",
               "id": 1
             },
-            "testFieldByte": {
-              "type": "bytes",
-              "id": 2
-            },
             "testFieldBool": {
               "type": "bool",
               "id": 3

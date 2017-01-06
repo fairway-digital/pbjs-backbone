@@ -3,7 +3,8 @@
 namespace PBB.utils {
 
   export function isEnum(protoObj) {
-    return protoObj.hasOwnProperty("values") && protoObj.hasOwnProperty("valuesById");
+    return (typeof protoObj.values !== "undefined")
+    && (typeof protoObj.valuesById !== "undefined");
   }
 
   export function isScalarType(protoObj) {

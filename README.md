@@ -10,5 +10,12 @@
   * Code in typescript
   * Test covered
 
+  ## Build
+
+  ```tsc -p .```
+
+  ## Tests
+
+  ``` testem ```
 
 

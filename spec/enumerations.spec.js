@@ -7,11 +7,12 @@ protobuf.load("spec/proto/enumerations.proto.json", function(err, root) {
     });
 
     describe(".getEnum", function() {
-      var ShotsEnum, TestMessage;
+      var ShotsEnum, TestMessage, testMessage;
 
       beforeEach(function() {
         ShotsEnum = PBB.getEnum("enumerations", "Shots");
         TestMessage = PBB.getModel("enumerations", "TestMessage");
+        testMessage = new TestMessage();
       });
 
       afterEach(function() {
@@ -30,8 +31,6 @@ protobuf.load("spec/proto/enumerations.proto.json", function(err, root) {
       });
 
       it("can be nested inside Message", function() {
-        var testMessage = new TestMessage();
-
         expect(testMessage.get("animal")).toEqual(1);
       });
 

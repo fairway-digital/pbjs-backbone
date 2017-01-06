@@ -24,12 +24,20 @@ namespace PBB {
 
       if (!PBB.utils.isEnum(message)) {
         store[packageName] = {};
+
         class Class extends Backbone.Model {
           fullName = packageName + "." + message;
           defaults() {
             return PBB.builder.defaults(message);
           }
         }
+
+        Object.keys(message.nested).forEach((key) => {
+          let nestedField = message.nested[key];
+          if (PBB.utils.isEnum(nestedField)) {
+            Class.prototype[nestedField.name] = nestedField.values;
+          }
+        });
 
         store[packageName][message] = Class;
       } else {

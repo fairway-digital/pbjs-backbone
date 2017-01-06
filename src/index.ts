@@ -32,12 +32,14 @@ namespace PBB {
           }
         }
 
-        Object.keys(message.nested).forEach((key) => {
-          let nestedField = message.nested[key];
-          if (PBB.utils.isEnum(nestedField)) {
-            Class.prototype[nestedField.name] = nestedField.values;
-          }
-        });
+        if (message.nested) {
+          Object.keys(message.nested).forEach((key) => {
+            let nestedField = message.nested[key];
+            if (PBB.utils.isEnum(nestedField)) {
+              Class.prototype[nestedField.name] = nestedField.values;
+            }
+          });
+        }
 
         store[packageName][message] = Class;
       } else {

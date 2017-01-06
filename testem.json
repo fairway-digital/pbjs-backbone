@@ -5,7 +5,7 @@
     "node_modules/underscore/underscore-min.js",
     "node_modules/backbone/backbone-min.js",
     "node_modules/protobufjs/dist/protobuf.min.js",
-    "dist/PBB.js",
+    "dist/pbb.js",
     "spec/**.spec.js"
   ]
 }

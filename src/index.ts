@@ -7,26 +7,26 @@ namespace PBB {
   let store = {};
   let enumStore = {};
 
-  export function getModel(pkg, name) {
-    return store[pkg]["Type ." + pkg + "." + name];
+  export function getModel(pkg: string, name: string): Backbone.Model {
+    return store[pkg][`Type .${pkg}.${name}`];
   }
 
-  export function getEnum(pkg, name) {
-    return enumStore[pkg]["." + pkg + "." + name];
+  export function getEnum(pkg: string, name: string): any {
+    return enumStore[pkg][`.${pkg}.${name}`];
   }
 
-  export function load(root) {
-    let packageName = Object.keys(root.nested)[0];
-    let messages = root.nested[packageName].nested;
+  export function load(root: any): void {
+    const packageName = Object.keys(root.nested)[0];
+    const messages = root.nested[packageName].nested;
 
     Object.keys(messages).forEach((msg) => {
-      let message = messages[msg];
+      const message = messages[msg];
 
       if (!PBB.utils.isEnum(message)) {
         store[packageName] = {};
 
         class Class extends Backbone.Model {
-          fullName = packageName + "." + message;
+          fullName = `${packageName}.${message}`;
           defaults() {
             return PBB.builder.defaults(message);
           }
@@ -34,7 +34,8 @@ namespace PBB {
 
         if (message.nested) {
           Object.keys(message.nested).forEach((key) => {
-            let nestedField = message.nested[key];
+            const nestedField = message.nested[key];
+
             if (PBB.utils.isEnum(nestedField)) {
               Class.prototype[nestedField.name] = nestedField.values;
             }

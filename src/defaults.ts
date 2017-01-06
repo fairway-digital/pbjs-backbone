@@ -2,7 +2,7 @@
 
 namespace PBB.builder {
 
-  export function defaults(message) {
+  export function defaults(message: any): any {
     let defaults = {};
 
     Object.keys(message.fields).forEach((fieldName) => {

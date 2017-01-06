@@ -2,12 +2,12 @@
 
 namespace PBB.utils {
 
-  export function isEnum(protoObj) {
+  export function isEnum(protoObj: any): boolean {
     return (typeof protoObj.values !== "undefined")
     && (typeof protoObj.valuesById !== "undefined");
   }
 
-  export function isScalarType(protoObj) {
+  export function isScalarType(protoObj: any): boolean {
     switch (protoObj.type) {
       case "string":
       case "bool":
@@ -21,13 +21,13 @@ namespace PBB.utils {
   }
 
   export function fullNamePkg(fullname: string) {
-    let tokens = fullname.split(".");
+    const tokens = fullname.split(".");
 
     return tokens[1];
   }
 
   export function fullNameName(fullname: string) {
-    let tokens = fullname.split(".");
+    const tokens = fullname.split(".");
 
     return tokens[2];
   }

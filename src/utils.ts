@@ -7,7 +7,7 @@ namespace PBB.utils {
   }
 
   export function isScalarType(protoObj) {
-    switch (protoObj.field) {
+    switch (protoObj.type) {
       case "string":
       case "bool":
       case "double":

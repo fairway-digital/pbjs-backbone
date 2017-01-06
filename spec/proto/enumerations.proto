@@ -1,0 +1,19 @@
+syntax = "proto3";
+package enumerations;
+
+enum Shots {
+  PUT = 1;
+  CHIP = 2;
+  PITCH = 3;
+  DRIVE = 4;
+}
+
+message TestMessage {
+  enum Animal {
+    CAT = 0;
+    DOG = 1;
+    COW = 2;
+  }
+  Animal animal = 1;
+}
+

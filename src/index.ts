@@ -4,11 +4,11 @@
 
 namespace PBB {
 
-  let store = {};
+  let typeStore = {};
   let enumStore = {};
 
   export function getModel(pkg: string, name: string): Backbone.Model {
-    return store[pkg][`Type .${pkg}.${name}`];
+    return typeStore[pkg][`Type .${pkg}.${name}`];
   }
 
   export function getEnum(pkg: string, name: string): any {
@@ -17,24 +17,24 @@ namespace PBB {
 
   export function load(root: any): void {
     const packageName = Object.keys(root.nested)[0];
-    const messages = root.nested[packageName].nested;
+    const objects = root.nested[packageName].nested;
 
-    Object.keys(messages).forEach((msg) => {
-      const message = messages[msg];
+    Object.keys(objects).forEach((msg) => {
+      const pbjsObj = objects[msg];
 
-      if (!PBB.utils.isEnum(message)) {
-        store[packageName] = {};
+      if (!PBB.utils.isEnum(pbjsObj)) {
+        typeStore[packageName] = {};
 
         class Class extends Backbone.Model {
-          fullName = `${packageName}.${message}`;
+          fullName = `${packageName}.${pbjsObj}`;
           defaults() {
-            return PBB.builder.defaults(message);
+            return PBB.builder.defaults(pbjsObj);
           }
         }
 
-        if (message.nested) {
-          Object.keys(message.nested).forEach((key) => {
-            const nestedField = message.nested[key];
+        if (pbjsObj.nested) {
+          Object.keys(pbjsObj.nested).forEach((key) => {
+            const nestedField = pbjsObj.nested[key];
 
             if (PBB.utils.isEnum(nestedField)) {
               Class.prototype[nestedField.name] = nestedField.values;
@@ -42,10 +42,10 @@ namespace PBB {
           });
         }
 
-        store[packageName][message] = Class;
+        typeStore[packageName][pbjsObj] = Class;
       } else {
         enumStore[packageName] = {};
-        enumStore[packageName][message.fullName] = PBB.builder.enumeration(message);
+        enumStore[packageName][pbjsObj.fullName] = PBB.builder.enumeration(pbjsObj);
       }
     });
   }

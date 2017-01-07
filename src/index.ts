@@ -15,6 +15,16 @@ namespace PBB {
     return enumStore[pkg][`.${pkg}.${name}`];
   }
 
+  export function getCollection(pkg: string, name: string): any {
+    const Model = PBB.getModel(pkg, name);
+
+    const Collection = Backbone.Collection.extend({
+      model: Model
+    });
+
+    return Collection;
+  }
+
   export function load(root: any): void {
     const packageName = Object.keys(root.nested)[0];
     const objects = root.nested[packageName].nested;

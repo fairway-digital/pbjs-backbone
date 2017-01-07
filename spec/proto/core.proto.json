@@ -1,0 +1,16 @@
+{
+  "nested": {
+    "core": {
+      "nested": {
+        "Club": {
+          "fields": {
+            "name": {
+              "type": "string",
+              "id": 0
+            }
+          }
+        }
+      }
+    }
+  }
+}

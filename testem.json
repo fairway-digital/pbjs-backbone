@@ -1,5 +1,5 @@
 {
-  "framework": "jasmine2",
+  "test_page": "testem.mustache",
   "serve_files": [
     "node_modules/jquery/dist/jquery.min.js",
     "node_modules/underscore/underscore-min.js",

@@ -1,22 +1,12 @@
 /// <reference path="../node_modules/@types/backbone/index.d.ts" />
+/// <reference path="../node_modules/protobufjs/index.d.ts" />
 
 namespace PBB.builder {
 
   type ScalarType = String | Boolean | Number;
 
   function buildScalarDefault(field: any): ScalarType |  undefined {
-    switch (field.type) {
-      case "string":
-        return "";
-      case "bool":
-        return false;
-      case "double":
-      case "float":
-      case "int32":
-        return 0;
-      default:
-        return;
-    }
+    return protobuf.types.defaults[field.type];
   }
 
   function buildDefault(field: any): any {

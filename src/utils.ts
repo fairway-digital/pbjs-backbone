@@ -8,16 +8,7 @@ namespace PBB.utils {
   }
 
   export function isScalarType(protoObj: any): boolean {
-    switch (protoObj.type) {
-      case "string":
-      case "bool":
-      case "double":
-      case "float":
-      case "int32":
-        return true;
-      default:
-        return false;
-    }
+    return protobuf.types.basic.hasOwnProperty(protoObj.type);
   }
 
   export function fullNamePkg(fullname: string) {

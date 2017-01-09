@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc -p .",
     "test": "testem",
     "coverage": "testem -f testem.js"
   },

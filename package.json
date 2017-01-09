@@ -19,6 +19,7 @@
   "devDependencies": {
     "@types/backbone": "^1.3.33",
     "jasmine": "^2.5.2",
+    "shelljs": "^0.7.6",
     "typescript": "^2.1.4"
   }
 }

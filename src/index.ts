@@ -26,8 +26,8 @@ namespace PBB {
   }
 
   export function load(root: any): void {
-    const packageName = Object.keys(root.nested)[0];
-    const objects = root.nested[packageName].nested;
+    const packageName = root.name;
+    const objects = root.nested;
 
     Object.keys(objects).forEach((msg) => {
       const pbjsObj = objects[msg];

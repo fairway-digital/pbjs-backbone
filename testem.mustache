@@ -8,7 +8,7 @@
 
   <script src="/node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
   <script src="/node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
-  <script src="/node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>
+  <script src="/jasmine-custom-boot.js"></script>
 
 	<script src="/testem.js"></script>
 	<script src="/node_modules/jquery/dist/jquery.min.js"></script>
@@ -16,6 +16,34 @@
 	<script src="/node_modules/backbone/backbone-min.js"></script>
 	<script src="/node_modules/protobufjs/dist/protobuf.min.js"></script>
 	<script src="/dist/pbb.js"></script>
+
+  <script>
+      protobuf.load([
+          "spec/proto/core.proto.json",
+          "spec/proto/defaults.proto.json",
+          "spec/proto/enumerations.proto.json"
+      ], function(err, protos) {
+        PBB.load(protos.nested.core);
+        PBB.load(protos.nested.defaults);
+        PBB.load(protos.nested.enumerations);
+
+        runSpecs();
+      });
+  </script>
+  <script>
+      Testem.afterTests(
+        function(config, data, callback) {
+          var coverage = JSON.stringify(window.__coverage__);
+          var xhr = new XMLHttpRequest();
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+              callback();
+            }
+          };
+          xhr.open('POST', '/coverage', true);
+          xhr.send(coverage);
+        });
+  </script>
 
   {{#serve_files}}
   <script src="/{{src}}"></script>

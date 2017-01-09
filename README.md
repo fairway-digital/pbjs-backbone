@@ -1,6 +1,10 @@
 # What
 
-  * From Protocol buffer, generate Backbone Model and Collections.
+  * From Protocol buffer, generate Backbone Model and Collections (statically and dynamically).
+  Model and Collections should be able to automatically:
+  * Be initialize with defaults
+  * Able to be validated (required fields, types etc..)
+  * Synchonized (using services)
 
 # How
 

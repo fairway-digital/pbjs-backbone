@@ -3,3 +3,4 @@ dist
 instrumented/
 coverage/
 coverage-*
+npm-debug*

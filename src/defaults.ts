@@ -3,15 +3,9 @@
 
 namespace PBB.builder {
 
-  type ScalarType = String | Boolean | Number;
-
-  function buildScalarDefault(field: any): ScalarType |  undefined {
-    return protobuf.types.defaults[field.type];
-  }
-
   function buildDefault(field: any): any {
     if (PBB.utils.isScalarType(field)) {
-      return buildScalarDefault(field);
+      return protobuf.types.defaults[field.type];
     } else {
       return field.id;
     }

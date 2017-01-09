@@ -24,6 +24,7 @@
 
   ``` npm test ```
 
-    Code coverage using [istanbuljs](https://github.com/gotwarlost/istanbul)
-    ``` npm run coverage ```
+  Code coverage using [istanbuljs](https://github.com/gotwarlost/istanbul)
+    
+  ``` npm run coverage ```
 

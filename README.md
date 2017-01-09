@@ -11,13 +11,15 @@
 
   Using [typescript](https://www.typescriptlang.org/)
 
-  ```tsc -p .```
+  ```npm run build```
 
   ## Tests
 
   Using [jasmine](https://jasmine.github.io/)
   and [testem](https://github.com/testem/testem).
 
-  ``` testem ```
+  ``` npm test ```
 
+    Code coverage using [istanbuljs](https://github.com/gotwarlost/istanbul)
+    ``` npm run coverage ```
 

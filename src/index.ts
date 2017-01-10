@@ -4,19 +4,14 @@
 
 namespace PBB {
 
-  let typeStore = {};
   let enumStore = {};
-
-  export function getModel(pkg: string, name: string): Backbone.Model {
-    return typeStore[pkg][`Type .${pkg}.${name}`];
-  }
 
   export function getEnum(pkg: string, name: string): any {
     return enumStore[pkg][`.${pkg}.${name}`];
   }
 
   export function getCollection(pkg: string, name: string): any {
-    const Model = PBB.getModel(pkg, name);
+    const Model = PBB.model.get(pkg, name);
 
     const Collection = Backbone.Collection.extend({
       model: Model
@@ -33,7 +28,6 @@ namespace PBB {
       const pbjsObj = objects[msg];
 
       if (!PBB.utils.isEnum(pbjsObj)) {
-        typeStore[packageName] = {};
 
         class Class extends Backbone.Model {
           fullName = `${packageName}.${pbjsObj}`;
@@ -52,7 +46,7 @@ namespace PBB {
           });
         }
 
-        typeStore[packageName][pbjsObj] = Class;
+        PBB.model.push(Class, pbjsObj);
       } else {
         enumStore[packageName] = {};
         enumStore[packageName][pbjsObj.fullName] = PBB.builder.enumeration(pbjsObj);

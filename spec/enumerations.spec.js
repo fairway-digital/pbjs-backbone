@@ -8,7 +8,7 @@ describe("#PBB", function() {
 
     beforeEach(function() {
       ShotsEnum = PBB.getEnum("enumerations", "Shots");
-      TestMessage = PBB.getModel("enumerations", "TestMessage");
+      TestMessage = PBB.model.get("enumerations", "TestMessage");
       testMessage = new TestMessage();
     });
 

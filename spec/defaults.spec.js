@@ -1,14 +1,14 @@
-describe("#PBB", function() {
-  describe(".getModel", function() {
+describe("#PBB.model", function() {
+  describe(".get", function() {
     it("must be defined", function() {
-      expect(PBB.getModel).toBeDefined();
+      expect(PBB.model.get).toBeDefined();
     });
 
     describe("must return a Backbone Model", function() {
       var TestMessage, testMessage;
 
       beforeEach(function() {
-        TestMessage = PBB.getModel("defaults", "TestMessage");
+        TestMessage = PBB.model.get("defaults", "TestMessage");
         testMessage = new TestMessage();
       });
 

@@ -2,7 +2,7 @@ describe("#PBB.getCollection", function() {
   var Clubs, clubs;
 
   beforeEach(function() {
-    Clubs = PBB.getCollection("core", "Club");
+    Clubs = PBB.collection.get("core", "Club");
     clubs = new Clubs();
   });
 
@@ -12,7 +12,7 @@ describe("#PBB.getCollection", function() {
   });
 
   it("must be defined", function() {
-    expect(PBB.getCollection).toBeDefined();
+    expect(PBB.collection.get).toBeDefined();
   });
 
   it("must be a collection of the right type", function() {

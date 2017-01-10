@@ -4,16 +4,6 @@
 
 namespace PBB {
 
-  export function getCollection(pkg: string, name: string): any {
-    const Model = PBB.model.get(pkg, name);
-
-    const Collection = Backbone.Collection.extend({
-      model: Model
-    });
-
-    return Collection;
-  }
-
   export function load(root: any): void {
     const packageName = root.name;
     const objects = root.nested;

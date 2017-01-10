@@ -1,4 +1,3 @@
-
 /// <reference path="../node_modules/@types/backbone/index.d.ts" />
 /// <reference path="defaults.ts" />
 /// <reference path="utils.ts" />

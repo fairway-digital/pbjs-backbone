@@ -11,8 +11,9 @@ namespace PBB {
     Object.keys(objects).forEach((msg) => {
       const pbjsObj = objects[msg];
 
-      if (!PBB.utils.isEnum(pbjsObj)) {
-
+      if (PBB.utils.isEnum(pbjsObj)) {
+        PBB.enumeration.push(pbjsObj);
+      } else {
         class Class extends Backbone.Model {
           fullName = `${packageName}.${pbjsObj}`;
           defaults() {
@@ -31,8 +32,6 @@ namespace PBB {
         }
 
         PBB.model.push(Class, pbjsObj);
-      } else {
-        PBB.enumeration.push(pbjsObj);
       }
     });
   }

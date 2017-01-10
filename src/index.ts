@@ -4,12 +4,6 @@
 
 namespace PBB {
 
-  let enumStore = {};
-
-  export function getEnum(pkg: string, name: string): any {
-    return enumStore[pkg][`.${pkg}.${name}`];
-  }
-
   export function getCollection(pkg: string, name: string): any {
     const Model = PBB.model.get(pkg, name);
 
@@ -48,8 +42,7 @@ namespace PBB {
 
         PBB.model.push(Class, pbjsObj);
       } else {
-        enumStore[packageName] = {};
-        enumStore[packageName][pbjsObj.fullName] = PBB.builder.enumeration(pbjsObj);
+        PBB.enumeration.push(pbjsObj);
       }
     });
   }

@@ -1,13 +1,13 @@
-describe("#PBB", function() {
+describe("#PBB.enumeration", function() {
   it("must be defined", function() {
-    expect(PBB.getEnum).toBeDefined();
+    expect(PBB.enumeration).toBeDefined();
   });
 
-  describe(".getEnum", function() {
+  describe(".get", function() {
     var ShotsEnum, TestMessage, testMessage;
 
     beforeEach(function() {
-      ShotsEnum = PBB.getEnum("enumerations", "Shots");
+      ShotsEnum = PBB.enumeration.get("enumerations", "Shots");
       TestMessage = PBB.model.get("enumerations", "TestMessage");
       testMessage = new TestMessage();
     });

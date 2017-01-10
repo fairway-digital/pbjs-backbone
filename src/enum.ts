@@ -1,10 +1,18 @@
 /// <reference path="../node_modules/@types/backbone/index.d.ts" />
 
-namespace PBB.builder {
+namespace PBB.enumeration {
+  let enumStore = {};
 
-  export function enumeration(message: any): any {
+  export function get(pkg: string, name: string): any {
+    return enumStore[`.${pkg}.${name}`];
+  }
 
-    return message.values;
+  export function push(obj: any) {
+    if (!enumStore[obj.fullName]) {
+      enumStore[obj.fullName] = {};
+    }
+
+    enumStore[obj.fullName] = obj.values;
   }
 }
 

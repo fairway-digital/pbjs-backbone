@@ -24,7 +24,6 @@ describe("#PBB.getCollection", function() {
     });
 
     expect(clubs.length).toBe(1);
-    expect(clubs.first().fullName).toEqual("core.Type .core.Club");
   });
 });
 

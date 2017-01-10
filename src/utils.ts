@@ -11,15 +11,4 @@ namespace PBB.utils {
     return protobuf.types.basic.hasOwnProperty(protoObj.type);
   }
 
-  export function fullNamePkg(fullname: string) {
-    const tokens = fullname.split(".");
-
-    return tokens[1];
-  }
-
-  export function fullNameName(fullname: string) {
-    const tokens = fullname.split(".");
-
-    return tokens[2];
-  }
 }

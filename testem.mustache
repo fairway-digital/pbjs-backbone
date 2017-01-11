@@ -19,10 +19,10 @@
 
   <script>
       protobuf.load([
-          "spec/proto/collections.proto.json",
-          "spec/proto/models.proto.json",
-          "spec/proto/defaults.proto.json",
-          "spec/proto/enumerations.proto.json"
+          "spec/proto/collections.proto",
+          "spec/proto/models.proto",
+          "spec/proto/defaults.proto",
+          "spec/proto/enumerations.proto"
       ], function(err, protos) {
         PBB.load(protos.nested.collections);
         PBB.load(protos.nested.models);

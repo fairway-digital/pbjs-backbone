@@ -2,20 +2,20 @@
 /// <reference path="defaults.ts" />
 /// <reference path="utils.ts" />
 
+import MemoryStore = PBB.utils.MemoryStore;
+
 namespace PBB.model {
 
-  let modelStore = {};
+  const store = new MemoryStore();
 
   export function get(pkg: string, name: string): Backbone.Model {
-    return modelStore[`.${pkg}.${name}`];
+    const fullName = `.${pkg}.${name}`;
+
+    return store.get(fullName);
   }
 
-  export function push(classObj: any, obj: any) {
-    if (!modelStore[obj.fullName]) {
-      modelStore[obj.fullName] = {};
-    }
-
-    modelStore[obj.fullName] = classObj;
+  export function push(protoObj: any, classObj: any) {
+    store.push(protoObj.fullName, classObj);
   }
 
   export function build(pbjsObj: any) {

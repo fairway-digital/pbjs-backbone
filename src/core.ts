@@ -15,7 +15,7 @@ namespace PBB {
       } else {
         const Class = PBB.model.build(pbjsObj);
 
-        PBB.model.push(Class, pbjsObj);
+        PBB.model.push(pbjsObj, Class);
       }
     });
   }

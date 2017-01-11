@@ -9,3 +9,11 @@ message TestMessage {
 		int32 test_field_int32 = 6;
 }
 
+message InnerMessage {
+  string field = 1;
+}
+
+message MessageContainer {
+  InnerMessage inner = 1;
+}
+

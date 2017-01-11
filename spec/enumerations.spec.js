@@ -28,7 +28,7 @@ describe("#PBB.enumeration", function() {
     });
 
     it("can be nested inside Message", function() {
-      expect(testMessage.get("animal")).toEqual(1);
+      expect(testMessage.get("animal")).toEqual("CAT");
     });
 
     it("must be attached statically to the Container Model", function() {

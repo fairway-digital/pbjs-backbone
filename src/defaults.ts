@@ -8,8 +8,25 @@ namespace PBB.builder {
         return field.options.default;
       } else if (PBB.utils.isScalarType(field)) {
         return protobuf.types.defaults[field.type];
+      } else if (PBB.utils.isEnum(field)) {
+        debugger;
+        return;
       } else {
-        return field.id;
+        /* TODO: make something cleaner */
+        const fullName = field.fullName;
+        const tokens = fullName.split(".");
+        const pkg = tokens[1];
+        const name = field.type;
+        let Field = PBB.model.get(pkg, name);
+        let Enum = PBB.enumeration.get(pkg, name);
+
+        if (Field) {
+          return new Field();
+        } else if (Enum) {
+          return Enum;
+        } else {
+          return field.parent.nested[name].valuesById[0];
+        }
       }
   }
 

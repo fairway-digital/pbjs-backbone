@@ -25,6 +25,37 @@
               "id": 6
             }
           }
+        },
+        "AnotherTestMessage": {
+          "fields": {
+            "resultPerPage": {
+              "type": "int32",
+              "id": 3,
+              "options": {
+                "default": 10
+              }
+            },
+            "corpus": {
+              "type": "Corpus",
+              "id": 4,
+              "options": {
+                "default": "UNIVERSAL"
+              }
+            }
+          },
+          "nested": {
+            "Corpus": {
+              "values": {
+                "UNIVERSAL": 0,
+                "WEB": 1,
+                "IMAGES": 2,
+                "LOCAL": 3,
+                "NEWS": 4,
+                "PRODUCTS": 5,
+                "VIDEO": 6
+              }
+            }
+          }
         }
       }
     }

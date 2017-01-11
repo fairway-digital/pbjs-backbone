@@ -5,7 +5,11 @@ namespace PBB.builder {
 
   function buildDefault(field: any): any {
     if (PBB.utils.isScalarType(field)) {
-      return protobuf.types.defaults[field.type];
+      if (field.options && field.options.default) {
+        return field.options.default;
+      } else {
+        return protobuf.types.defaults[field.type];
+      }
     } else {
       return field.id;
     }

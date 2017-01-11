@@ -1,6 +1,6 @@
 {
   "nested": {
-    "core": {
+    "collections": {
       "nested": {
         "Club": {
           "fields": {

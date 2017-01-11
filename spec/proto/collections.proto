@@ -1,5 +1,5 @@
 syntax = "proto3";
-package core;
+package collections;
 
 message Club {
   string name = 0;

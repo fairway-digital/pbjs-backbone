@@ -5,7 +5,7 @@
 
 namespace PBB.collection {
 
-  let collectionStore = {};
+  const store = new MemoryStore();
 
   function buildCollection(pkg: string, name: string): any {
     const Model = PBB.model.get(pkg, name);
@@ -17,23 +17,15 @@ namespace PBB.collection {
     return Collection;
   }
 
-  function push(collection: any, fullName) {
-    if (!collectionStore[fullName]) {
-      collectionStore[fullName] = {};
-    }
-
-    collectionStore[fullName] = collection;
-  }
-
   export function get(pkg: string, name: string): Backbone.Model {
     const fullName = `.${pkg}.${name}`;
 
-    if (collectionStore[fullName]) {
-      return collectionStore[fullName];
+    if (store.has(fullName)) {
+      return store.get(fullName);
     } else {
       const collection = buildCollection(pkg, name);
 
-      push(collection, fullName);
+      store.push(fullName, collection);
 
       return collection;
     }

@@ -18,7 +18,7 @@ namespace PBB.collection {
   }
 
   export function get(pkg: string, name: string): Backbone.Model {
-    const fullName = `.${pkg}.${name}`;
+    const fullName = utils.fullName(pkg, name);
 
     if (store.has(fullName)) {
       return store.get(fullName);

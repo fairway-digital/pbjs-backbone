@@ -6,7 +6,7 @@ namespace PBB.enumeration {
   const store = new MemoryStore();
 
   export function get(pkg: string, name: string): any {
-    const fullName = `.${pkg}.${name}`;
+    const fullName = utils.fullName(pkg, name);
 
     return store.get(fullName);
   }

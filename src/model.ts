@@ -9,7 +9,7 @@ namespace PBB.model {
   const store = new MemoryStore();
 
   export function get(pkg: string, name: string): Backbone.Model {
-    const fullName = `.${pkg}.${name}`;
+    const fullName = utils.fullName(pkg, name);
 
     return store.get(fullName);
   }

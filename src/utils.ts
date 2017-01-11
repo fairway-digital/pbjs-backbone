@@ -17,6 +17,10 @@ namespace PBB.utils {
     return protobuf.types.basic.hasOwnProperty(protoObj.type);
   }
 
+  export function fullName(pkg: string, name: string) {
+    return `.${pkg}.${name}`;
+  }
+
   export class MemoryStore implements IStore {
     private store: any;
 

@@ -7,9 +7,12 @@ namespace PBB.builder {
       if (field.options && field.options.default) {
         return field.options.default;
       } else if (PBB.utils.isScalarType(field)) {
-        return protobuf.types.defaults[field.type];
+        if (field.repeated) {
+          return new Backbone.Collection();
+        } else {
+          return protobuf.types.defaults[field.type];
+        }
       } else if (PBB.utils.isEnum(field)) {
-        debugger;
         return;
       } else {
         /* TODO: make something cleaner */
@@ -21,7 +24,13 @@ namespace PBB.builder {
         let Enum = PBB.enumeration.get(pkg, name);
 
         if (Field) {
-          return new Field();
+          if (field.repeated) {
+            let C = PBB.collection.get(pkg, name);
+
+            return new C();
+          } else {
+            return new Field();
+          }
         } else if (Enum) {
           return Enum;
         } else {

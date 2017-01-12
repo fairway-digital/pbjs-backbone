@@ -1,0 +1,15 @@
+syntax = "proto3";
+package repeated;
+
+message TestMessage {
+  repeated string snippets = 3;
+}
+
+message Inner {
+  string foo = 1;
+}
+
+message AnotherMessage {
+  repeated Inner inners = 1;
+}
+

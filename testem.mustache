@@ -21,11 +21,13 @@
       protobuf.load([
           "spec/proto/collections.proto",
           "spec/proto/models.proto",
+          "spec/proto/repeated.proto",
           "spec/proto/defaults.proto",
           "spec/proto/enumerations.proto"
       ], function(err, protos) {
         PBB.load(protos.nested.collections);
         PBB.load(protos.nested.models);
+        PBB.load(protos.nested.repeated);
         PBB.load(protos.nested.defaults);
         PBB.load(protos.nested.enumerations);
 

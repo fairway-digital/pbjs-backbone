@@ -4,7 +4,9 @@
 namespace PBB.builder {
 
   function buildDefault(field: any): any {
-      if (field.options && field.options.default) {
+      if (field.type === "google.protobuf.Any") {
+        return new Backbone.Model();
+      } else if (field.options && field.options.default) {
         return field.options.default;
       } else if (PBB.utils.isScalarType(field)) {
         if (field.repeated) {

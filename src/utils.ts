@@ -27,6 +27,10 @@ namespace PBB.utils {
     return field.options && field.options.default;
   }
 
+  export function isRepeated(field: any): boolean {
+    return field.repeated;
+  }
+
   export function fullName(pkg: string, name: string) {
     return `.${pkg}.${name}`;
   }

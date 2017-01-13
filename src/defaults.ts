@@ -12,7 +12,7 @@ namespace PBB.builder {
       } else if (utils.hasDefault(field)) {
         return field.options.default;
       } else if (PBB.utils.isScalarType(field)) {
-        if (field.repeated) {
+        if (utils.isRepeated(field)) {
           return new Backbone.Collection();
         } else {
           return protobuf.types.defaults[field.type];

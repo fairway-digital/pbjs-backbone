@@ -9,7 +9,7 @@ namespace PBB.builder {
   function buildDefault(field: any): any {
       if (utils.isAny(field)) {
         return new Backbone.Model();
-      } else if (field.options && field.options.default) {
+      } else if (utils.hasDefault(field)) {
         return field.options.default;
       } else if (PBB.utils.isScalarType(field)) {
         if (field.repeated) {

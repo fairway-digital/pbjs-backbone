@@ -23,6 +23,10 @@ namespace PBB.utils {
     return field.type === GOOGLE_PROTOBUF_ANY;
   }
 
+  export function hasDefault(field: any): boolean {
+    return field.options && field.options.default;
+  }
+
   export function fullName(pkg: string, name: string) {
     return `.${pkg}.${name}`;
   }

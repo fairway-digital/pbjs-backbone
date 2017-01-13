@@ -1,10 +1,13 @@
 /// <reference path="../node_modules/@types/backbone/index.d.ts" />
 /// <reference path="../node_modules/protobufjs/index.d.ts" />
+/// <reference path="./utils.ts" />
+
+import utils = PBB.utils;
 
 namespace PBB.builder {
 
   function buildDefault(field: any): any {
-      if (field.type === "google.protobuf.Any") {
+      if (utils.isAny(field)) {
         return new Backbone.Model();
       } else if (field.options && field.options.default) {
         return field.options.default;

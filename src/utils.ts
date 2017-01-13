@@ -2,6 +2,8 @@
 
 namespace PBB.utils {
 
+  const GOOGLE_PROTOBUF_ANY = "google.protobuf.Any";
+
   interface IStore {
     get(key: string): any;
     push(key: string, obj: any): void;
@@ -15,6 +17,10 @@ namespace PBB.utils {
 
   export function isScalarType(protoObj: any): boolean {
     return protobuf.types.basic.hasOwnProperty(protoObj.type);
+  }
+
+  export function isAny(field: any): boolean {
+    return field.type === GOOGLE_PROTOBUF_ANY;
   }
 
   export function fullName(pkg: string, name: string) {

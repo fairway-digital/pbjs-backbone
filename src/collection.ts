@@ -13,7 +13,6 @@ namespace PBB.collection {
 
   function buildCollection(pkg: string, name: string): any {
     const Model = PBB.model.get(pkg, name);
-
     const Collection = Backbone.Collection.extend({
       model: Model
     });
@@ -27,11 +26,11 @@ namespace PBB.collection {
     if (store.has(fullName)) {
       return store.get(fullName);
     } else {
-      const collection = buildCollection(pkg, name);
+      const Collection = buildCollection(pkg, name);
 
-      store.push(fullName, collection);
+      store.push(fullName, Collection);
 
-      return collection;
+      return Collection;
     }
   }
 

@@ -5,6 +5,10 @@
 
 namespace PBB.collection {
 
+  interface PBBCollection {
+    new () : PBBCollection;
+  }
+
   const store = new MemoryStore();
 
   function buildCollection(pkg: string, name: string): any {
@@ -17,7 +21,7 @@ namespace PBB.collection {
     return Collection;
   }
 
-  export function get(pkg: string, name: string): Backbone.Model {
+  export function get(pkg: string, name: string): PBBCollection {
     const fullName = utils.fullName(pkg, name);
 
     if (store.has(fullName)) {

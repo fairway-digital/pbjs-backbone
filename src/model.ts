@@ -6,9 +6,13 @@ import MemoryStore = PBB.utils.MemoryStore;
 
 namespace PBB.model {
 
+  interface PBBModel {
+    new () : PBBModel;
+  }
+
   const store = new MemoryStore();
 
-  export function get(pkg: string, name: string): Backbone.Model {
+  export function get(pkg: string, name: string): PBBModel {
     const fullName = utils.fullName(pkg, name);
 
     return store.get(fullName);

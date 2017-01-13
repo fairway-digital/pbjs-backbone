@@ -27,7 +27,7 @@ namespace PBB.builder {
 
         if (Field) {
           if (field.repeated) {
-            let C = PBB.collection.get(pkg, name);
+            const C = PBB.collection.get(pkg, name);
 
             return new C();
           } else {

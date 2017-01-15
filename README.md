@@ -2,8 +2,8 @@
 
 # Travis
 
-[![][travis-image]][travis-url]]
-[travis-image]: https://img.shields.io/travis/dcodeIO/protobuf.js.svg
+[![][travis-image]][travis-url]
+[travis-image]: https://api.travis-ci.org/fairway-digital/pbjs-backbone.svg?branch=master
 [travis-url]: https://api.travis-ci.org/fairway-digital/pbjs-backbone.svg?branch=master
 
 # What

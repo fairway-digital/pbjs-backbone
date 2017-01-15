@@ -12,10 +12,10 @@ namespace PBB.collection {
   const store = new MemoryStore();
 
   function buildCollection(pkg: string, name: string): any {
-    const Model = PBB.model.get(pkg, name);
-    const Collection = Backbone.Collection.extend({
-      model: Model
-    });
+    const M = PBB.model.get(pkg, name);
+    class Collection extends Backbone.Collection<any> {
+      model= M;
+    };
 
     return Collection;
   }

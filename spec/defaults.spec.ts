@@ -1,5 +1,5 @@
 /// <reference path="../node_modules/@types/jasmine/index.d.ts" />
-/// <reference path="../dist/pbb.js" />
+/// <reference path="../dist/shaft.js" />
 
 describe("#defaults", () => {
   let TestMessage, testMessage;

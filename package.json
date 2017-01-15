@@ -7,7 +7,7 @@
     "build": "tsc -p .",
     "test": "testem",
     "coverage": "testem -f testem.js",
-    "uglify": "uglifyjs dist/pbb.js -o dist/pbb.min.js --source-map dist/pbb.min.js.map"
+    "uglify": "uglifyjs dist/shaft.js -o dist/shaft.min.js --source-map dist/shaft.min.js.map"
   },
   "author": "",
   "license": "ISC",

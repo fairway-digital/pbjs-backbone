@@ -1,10 +1,10 @@
 {
   "test_page": "testem.mustache",
   "src_files": [
-    "spec/**.spec.js",
+    "dist/spec/**.spec.js",
     "dist/*.js"
   ],
   "serve_files": [
-    "spec/**.spec.js"
+    "dist/spec/**.spec.js"
   ]
 }

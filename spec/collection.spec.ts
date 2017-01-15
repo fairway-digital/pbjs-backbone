@@ -1,27 +1,30 @@
-describe("#PBB.collection", function() {
-  var Clubs, clubs;
+/// <reference path="../node_modules/@types/jasmine/index.d.ts" />
+/// <reference path="../dist/pbb.js" />
 
-  beforeEach(function() {
+describe("#PBB.collection", () => {
+  let Clubs, clubs;
+
+  beforeEach(() => {
     Clubs = PBB.collection.get("collections", "Club");
     clubs = new Clubs();
   });
 
-  afterEach(function() {
+  afterEach(() => {
     Clubs = null;
     clubs = null;
   });
 
-  it("must be defined", function() {
+  it("must be defined", () => {
     expect(PBB.collection).toBeDefined();
   });
 
-  describe(".get", function() {
+  describe(".get", () => {
 
-    it("must be defined", function() {
+    it("must be defined", () => {
       expect(PBB.collection.get).toBeDefined();
     });
 
-    it("Should return a typed Collection", function() {
+    it("Should return a typed Collection", () => {
       expect(Clubs).toBeDefined();
       expect(clubs).toBeDefined();
 

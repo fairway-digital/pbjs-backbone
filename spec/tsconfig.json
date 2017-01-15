@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "rootDir" : "./",
+    "outDir": "../dist/spec",
+    "target": "es5",
+    "noImplicitAny": false,
+    "allowJs": true
+  }
+}

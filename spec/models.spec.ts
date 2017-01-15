@@ -1,37 +1,40 @@
-describe("#PBB.model", function() {
-  describe(".get", function() {
-    it("must be defined", function() {
+/// <reference path="../node_modules/@types/jasmine/index.d.ts" />
+/// <reference path="../dist/pbb.js" />
+
+describe("#PBB.model", () => {
+  describe(".get", () => {
+    it("must be defined", () => {
       expect(PBB.model.get).toBeDefined();
     });
 
-    describe("must return a Backbone Model", function() {
-      var TestMessage, testMessage;
-      var MessageContainer, messageContainer;
+    describe("must return a Backbone Model", () => {
+      let TestMessage, testMessage;
+      let MessageContainer, messageContainer;
 
-      beforeEach(function() {
+      beforeEach(() => {
         TestMessage = PBB.model.get("models", "TestMessage");
         testMessage = new TestMessage();
         MessageContainer = PBB.model.get("models", "MessageContainer");
         messageContainer = new MessageContainer();
       });
 
-      afterEach(function() {
+      afterEach(() => {
         TestMessage = null;
         testMessage = null;
         MessageContainer = null;
         messageContainer = null;
       });
 
-      it("Class", function() {
+      it("Class", () => {
         expect(TestMessage).toBeDefined();
       });
 
-      it("instantiable", function() {
+      it("instantiable", () => {
         expect(testMessage).toBeDefined();
       });
 
-      describe("#nested fields", function() {
-        it("should be attached", function() {
+      describe("#nested fields", () => {
+        it("should be attached", () => {
           expect(messageContainer.get("inner")).toBeDefined();
           expect(messageContainer.get("inner").get("field")).toBe("");
         });

@@ -1,23 +1,26 @@
-describe("#PBB.enumeration", function() {
-  it("must be defined", function() {
+/// <reference path="../node_modules/@types/jasmine/index.d.ts" />
+/// <reference path="../dist/pbb.js" />
+
+describe("#PBB.enumeration", () => {
+  it("must be defined", () => {
     expect(PBB.enumeration).toBeDefined();
   });
 
-  describe(".get", function() {
-    var ShotsEnum, TestMessage, testMessage;
+  describe(".get", () => {
+    let ShotsEnum, TestMessage, testMessage;
 
-    beforeEach(function() {
+    beforeEach(() => {
       ShotsEnum = PBB.enumeration.get("enumerations", "Shots");
       TestMessage = PBB.model.get("enumerations", "TestMessage");
       testMessage = new TestMessage();
     });
 
-    afterEach(function() {
+    afterEach(() => {
       ShotsEnum = null;
       TestMessage = null;
     });
 
-    it("must return plain Object key/Values", function() {
+    it("must return plain Object key/Values", () => {
       expect(ShotsEnum).toBeDefined();
       expect(ShotsEnum).toEqual({
         PUT : 1,
@@ -27,11 +30,11 @@ describe("#PBB.enumeration", function() {
       });
     });
 
-    it("can be nested inside Message", function() {
+    it("can be nested inside Message", () => {
       expect(testMessage.get("animal")).toEqual("CAT");
     });
 
-    it("must be attached statically to the Container Model", function() {
+    it("must be attached statically to the Container Model", () => {
       expect(testMessage.Animal).toEqual({
         CAT: 0,
         DOG: 1,

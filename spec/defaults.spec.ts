@@ -1,23 +1,26 @@
-describe("#defaults", function() {
-  var TestMessage, testMessage;
-  var AnotherTestMessage, anotherTestMessage;
+/// <reference path="../node_modules/@types/jasmine/index.d.ts" />
+/// <reference path="../dist/pbb.js" />
 
-  beforeEach(function() {
+describe("#defaults", () => {
+  let TestMessage, testMessage;
+  let AnotherTestMessage, anotherTestMessage;
+
+  beforeEach(() => {
     TestMessage = PBB.model.get("defaults", "TestMessage");
     AnotherTestMessage = PBB.model.get("defaults", "AnotherTestMessage");
     testMessage = new TestMessage();
     anotherTestMessage = new AnotherTestMessage();
   });
 
-  afterEach(function() {
+  afterEach(() => {
     TestMessage = null;
     testMessage = null;
     AnotherTestMessage = null;
     anotherTestMessage = null;
   });
 
-  describe("Model default defaults", function() {
-    var fields = [
+  describe("Model default defaults", () => {
+    let fields = [
       { fieldName: "testFieldString", type: "string", expected: ""},
       { fieldName: "testFieldBool", type: "bool", expected: false },
       { fieldName: "testFieldDouble", type: "double", expected: 0 },
@@ -25,22 +28,22 @@ describe("#defaults", function() {
       { fieldName: "testFieldInt32", type: "int32", expected: 0 }
     ];
 
-    for (var i = 0 ; i < fields.length ; i++) {
-      var field = fields[i];
+    for (let i = 0 ; i < fields.length ; i++) {
+      let field = fields[i];
 
-      it("'" + field.type + "' fields must be initialized by default to '" + field.expected + "'", function() {
+      it("'" + field.type + "' fields must be initialized by default to '" + field.expected + "'", () => {
         expect(testMessage.get(field.fieldName)).toBe(field.expected);
       });
     }
   });
 
 
-  describe("Model custom defaults", function() {
-    it("should initialize simple types with value", function() {
+  describe("Model custom defaults", () => {
+    it("should initialize simple types with value", () => {
       expect(anotherTestMessage.get("resultPerPage")).toBe(10);
     });
 
-    it("should initialize enums types with value", function() {
+    it("should initialize enums types with value", () => {
       expect(anotherTestMessage.get("corpus")).toBe("UNIVERSAL");
     });
   });

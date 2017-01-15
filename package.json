@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@types/backbone": "^1.3.33",
+    "@types/jasmine": "^2.5.40",
     "@types/node": "^6.0.59",
     "jasmine": "^2.5.2",
     "shelljs": "^0.7.6",

@@ -2,9 +2,7 @@
 
 # Travis
 
-[![][travis-image]][travis-url]
-[travis-image]: https://api.travis-ci.org/fairway-digital/pbjs-backbone.svg?branch=master
-[travis-url]: https://api.travis-ci.org/fairway-digital/pbjs-backbone.svg?branch=master
+[![Build Status](https://travis-ci.org/fairway-digital/pbjs-backbone.svg?branch=master)](https://travis-ci.org/fairway-digital/pbjs-backbone)
 
 # What
 

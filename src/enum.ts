@@ -1,7 +1,7 @@
 /// <reference path="../node_modules/@types/backbone/index.d.ts" />
 /// <reference path="utils.ts" />
 
-namespace PBB.enumeration {
+namespace shaft.enumeration {
 
   const store = new MemoryStore();
 

@@ -6,8 +6,8 @@ describe("#defaults", () => {
   let AnotherTestMessage, anotherTestMessage;
 
   beforeEach(() => {
-    TestMessage = PBB.model.get("defaults", "TestMessage");
-    AnotherTestMessage = PBB.model.get("defaults", "AnotherTestMessage");
+    TestMessage = shaft.model.get("defaults", "TestMessage");
+    AnotherTestMessage = shaft.model.get("defaults", "AnotherTestMessage");
     testMessage = new TestMessage();
     anotherTestMessage = new AnotherTestMessage();
   });

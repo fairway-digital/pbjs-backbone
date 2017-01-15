@@ -1,16 +1,16 @@
 /// <reference path="../node_modules/@types/jasmine/index.d.ts" />
 /// <reference path="../dist/shaft.js" />
 
-describe("#PBB.model repeated fields", () => {
+describe("#shaft.model repeated fields", () => {
 
   describe("must return a Backbone Collection", () => {
     let TestMessage, testMessage;
     let AnotherMessage, anotherMessage;
 
     beforeEach(() => {
-      TestMessage = PBB.model.get("repeated", "TestMessage");
+      TestMessage = shaft.model.get("repeated", "TestMessage");
       testMessage = new TestMessage();
-      AnotherMessage = PBB.model.get("repeated", "AnotherMessage");
+      AnotherMessage = shaft.model.get("repeated", "AnotherMessage");
       anotherMessage = new AnotherMessage();
     });
 

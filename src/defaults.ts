@@ -2,22 +2,22 @@
 /// <reference path="../node_modules/protobufjs/index.d.ts" />
 /// <reference path="./utils.ts" />
 
-import utils = PBB.utils;
+import utils = shaft.utils;
 
-namespace PBB.builder {
+namespace shaft.builder {
 
   function buildDefault(field: any): any {
       if (utils.isAny(field)) {
         return new Backbone.Model();
       } else if (utils.hasDefault(field)) {
         return field.options.default;
-      } else if (PBB.utils.isScalarType(field)) {
+      } else if (shaft.utils.isScalarType(field)) {
         if (utils.isRepeated(field)) {
           return new Backbone.Collection();
         } else {
           return protobuf.types.defaults[field.type];
         }
-      } else if (PBB.utils.isEnum(field)) {
+      } else if (shaft.utils.isEnum(field)) {
         return;
       } else {
         /* TODO: make something cleaner */
@@ -25,12 +25,12 @@ namespace PBB.builder {
         const tokens = fullName.split(".");
         const pkg = tokens[1];
         const name = field.type;
-        let Field = PBB.model.get(pkg, name);
-        let Enum = PBB.enumeration.get(pkg, name);
+        let Field = shaft.model.get(pkg, name);
+        let Enum = shaft.enumeration.get(pkg, name);
 
         if (Field) {
           if (field.repeated) {
-            const C = PBB.collection.get(pkg, name);
+            const C = shaft.collection.get(pkg, name);
 
             return new C();
           } else {

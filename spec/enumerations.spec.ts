@@ -1,17 +1,17 @@
 /// <reference path="../node_modules/@types/jasmine/index.d.ts" />
 /// <reference path="../dist/shaft.js" />
 
-describe("#PBB.enumeration", () => {
+describe("#shaft.enumeration", () => {
   it("must be defined", () => {
-    expect(PBB.enumeration).toBeDefined();
+    expect(shaft.enumeration).toBeDefined();
   });
 
   describe(".get", () => {
     let ShotsEnum, TestMessage, testMessage;
 
     beforeEach(() => {
-      ShotsEnum = PBB.enumeration.get("enumerations", "Shots");
-      TestMessage = PBB.model.get("enumerations", "TestMessage");
+      ShotsEnum = shaft.enumeration.get("enumerations", "Shots");
+      TestMessage = shaft.model.get("enumerations", "TestMessage");
       testMessage = new TestMessage();
     });
 

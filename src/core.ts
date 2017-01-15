@@ -2,7 +2,7 @@
 /// <reference path="defaults.ts" />
 /// <reference path="utils.ts" />
 
-namespace PBB {
+namespace shaft {
 
   export function load(root: any): void {
     const objects = root.nested;
@@ -10,12 +10,12 @@ namespace PBB {
     Object.keys(objects).forEach((msg) => {
       const pbjsObj = objects[msg];
 
-      if (PBB.utils.isEnum(pbjsObj)) {
-        PBB.enumeration.push(pbjsObj);
+      if (shaft.utils.isEnum(pbjsObj)) {
+        shaft.enumeration.push(pbjsObj);
       } else {
-        const Class = PBB.model.build(pbjsObj);
+        const Class = shaft.model.build(pbjsObj);
 
-        PBB.model.push(pbjsObj, Class);
+        shaft.model.push(pbjsObj, Class);
       }
     });
   }

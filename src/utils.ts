@@ -1,6 +1,6 @@
 /// <reference path="../node_modules/@types/backbone/index.d.ts" />
 
-namespace PBB.utils {
+namespace shaft.utils {
 
   const GOOGLE_PROTOBUF_ANY = "google.protobuf.Any";
 

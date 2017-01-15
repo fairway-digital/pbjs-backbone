@@ -2,17 +2,17 @@
 /// <reference path="defaults.ts" />
 /// <reference path="utils.ts" />
 
-import MemoryStore = PBB.utils.MemoryStore;
+import MemoryStore = shaft.utils.MemoryStore;
 
-namespace PBB.model {
+namespace shaft.model {
 
-  interface PBBModel {
-    new () : PBBModel;
+  interface ShaftModel {
+    new () : ShaftModel;
   }
 
   const store = new MemoryStore();
 
-  export function get(pkg: string, name: string): PBBModel {
+  export function get(pkg: string, name: string): ShaftModel {
     const fullName = utils.fullName(pkg, name);
 
     return store.get(fullName);
@@ -25,7 +25,7 @@ namespace PBB.model {
   export function build(pbjsObj: any) {
     class Class extends Backbone.Model {
       defaults() {
-        return PBB.builder.defaults(pbjsObj);
+        return shaft.builder.defaults(pbjsObj);
       }
     }
 
@@ -33,7 +33,7 @@ namespace PBB.model {
       Object.keys(pbjsObj.nested).forEach((key) => {
         const nestedField = pbjsObj.nested[key];
 
-        if (PBB.utils.isEnum(nestedField)) {
+        if (shaft.utils.isEnum(nestedField)) {
           Class.prototype[nestedField.name] = nestedField.values;
         }
       });

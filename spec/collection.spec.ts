@@ -1,11 +1,11 @@
 /// <reference path="../node_modules/@types/jasmine/index.d.ts" />
 /// <reference path="../dist/shaft.js" />
 
-describe("#PBB.collection", () => {
+describe("#shaft.collection", () => {
   let Clubs, clubs;
 
   beforeEach(() => {
-    Clubs = PBB.collection.get("collections", "Club");
+    Clubs = shaft.collection.get("collections", "Club");
     clubs = new Clubs();
   });
 
@@ -15,13 +15,13 @@ describe("#PBB.collection", () => {
   });
 
   it("must be defined", () => {
-    expect(PBB.collection).toBeDefined();
+    expect(shaft.collection).toBeDefined();
   });
 
   describe(".get", () => {
 
     it("must be defined", () => {
-      expect(PBB.collection.get).toBeDefined();
+      expect(shaft.collection.get).toBeDefined();
     });
 
     it("Should return a typed Collection", () => {

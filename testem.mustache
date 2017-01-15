@@ -26,12 +26,12 @@
           "spec/proto/any.proto",
           "spec/proto/enumerations.proto"
       ], function(err, protos) {
-        PBB.load(protos.nested.collections);
-        PBB.load(protos.nested.models);
-        PBB.load(protos.nested.repeated);
-        PBB.load(protos.nested.defaults);
-        PBB.load(protos.nested.any);
-        PBB.load(protos.nested.enumerations);
+        shaft.load(protos.nested.collections);
+        shaft.load(protos.nested.models);
+        shaft.load(protos.nested.repeated);
+        shaft.load(protos.nested.defaults);
+        shaft.load(protos.nested.any);
+        shaft.load(protos.nested.enumerations);
 
         runSpecs();
       });

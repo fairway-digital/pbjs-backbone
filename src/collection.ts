@@ -3,16 +3,16 @@
 /// <reference path="utils.ts" />
 /// <reference path="model.ts" />
 
-namespace PBB.collection {
+namespace shaft.collection {
 
-  interface PBBCollection {
-    new () : PBBCollection;
+  interface ShaftCollection {
+    new () : ShaftCollection;
   }
 
   const store = new MemoryStore();
 
   function buildCollection(pkg: string, name: string): any {
-    const M = PBB.model.get(pkg, name);
+    const M = shaft.model.get(pkg, name);
     class Collection extends Backbone.Collection<any> {
       model= M;
     };
@@ -20,7 +20,7 @@ namespace PBB.collection {
     return Collection;
   }
 
-  export function get(pkg: string, name: string): PBBCollection {
+  export function get(pkg: string, name: string): ShaftCollection {
     const fullName = utils.fullName(pkg, name);
 
     if (store.has(fullName)) {

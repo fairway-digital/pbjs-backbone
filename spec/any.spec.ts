@@ -1,13 +1,13 @@
 /// <reference path="../node_modules/@types/jasmine/index.d.ts" />
 /// <reference path="../dist/shaft.js" />
 
-describe("#PBB.model Any field type", () => {
+describe("#shaft.model Any field type", () => {
 
   describe("should generate plain Backbone Model", () => {
     let ErrorStatus, errorStatus;
 
     beforeEach(() => {
-      ErrorStatus = PBB.model.get("any", "ErrorStatus");
+      ErrorStatus = shaft.model.get("any", "ErrorStatus");
       errorStatus = new ErrorStatus();
     });
 

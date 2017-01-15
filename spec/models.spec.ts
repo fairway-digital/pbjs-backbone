@@ -1,10 +1,10 @@
 /// <reference path="../node_modules/@types/jasmine/index.d.ts" />
 /// <reference path="../dist/shaft.js" />
 
-describe("#PBB.model", () => {
+describe("#shaft.model", () => {
   describe(".get", () => {
     it("must be defined", () => {
-      expect(PBB.model.get).toBeDefined();
+      expect(shaft.model.get).toBeDefined();
     });
 
     describe("must return a Backbone Model", () => {
@@ -12,9 +12,9 @@ describe("#PBB.model", () => {
       let MessageContainer, messageContainer;
 
       beforeEach(() => {
-        TestMessage = PBB.model.get("models", "TestMessage");
+        TestMessage = shaft.model.get("models", "TestMessage");
         testMessage = new TestMessage();
-        MessageContainer = PBB.model.get("models", "MessageContainer");
+        MessageContainer = shaft.model.get("models", "MessageContainer");
         messageContainer = new MessageContainer();
       });
 

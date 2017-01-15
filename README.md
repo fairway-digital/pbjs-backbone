@@ -1,5 +1,9 @@
 # WORK IN PROGRESS
 
+# Travis
+
+https://api.travis-ci.org/fairway-digital/pbjs-backbone.svg?branch=master
+
 # What
 
   * From Protocol buffer, generate Backbone Model and Collections (statically and dynamically).
@@ -27,6 +31,6 @@
   ``` npm test ```
 
   Code coverage using [istanbuljs](https://github.com/gotwarlost/istanbul)
-    
+
   ``` npm run coverage ```
 

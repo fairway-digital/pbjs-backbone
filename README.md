@@ -2,8 +2,8 @@
 
 # Travis
 
-[![Build Status](https://travis-ci.org/fairway-digital/pbjs-backbone.svg?branch=master)](https://travis-ci.org/fairway-digital/pbjs-backbone)
-[![Dependencies](https://david-dm.org/fairway-digital/pbjs-backbone.svg)](https://david-dm.org/fairway-digital/pbjs-backbone)
+[![Build Status](https://travis-ci.org/fairway-digital/shaft.svg?branch=master)](https://travis-ci.org/fairway-digital/shaft)
+[![Dependencies](https://david-dm.org/fairway-digital/shaft.svg)](https://david-dm.org/fairway-digital/shaft)
 
 # What
 

@@ -1,6 +1,8 @@
 syntax = "proto3";
 package nested;
 
+import "imported.proto";
+
 message InnerMessageLevel2 {
   string name = 1;
 }
@@ -13,3 +15,6 @@ message MessageContainer {
   InnerMessage inner = 1;
 }
 
+message MessageContainer2 {
+  ImportedMessage importedMessage = 1;
+}

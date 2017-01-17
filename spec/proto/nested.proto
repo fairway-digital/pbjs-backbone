@@ -1,0 +1,15 @@
+syntax = "proto3";
+package nested;
+
+message InnerMessageLevel2 {
+  string name = 1;
+}
+
+message InnerMessage {
+  InnerMessageLevel2 innerMessage2 = 1;
+}
+
+message MessageContainer {
+  InnerMessage inner = 1;
+}
+

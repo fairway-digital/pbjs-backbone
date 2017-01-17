@@ -22,12 +22,14 @@
           "spec/proto/collections.proto",
           "spec/proto/models.proto",
           "spec/proto/repeated.proto",
+          "spec/proto/nested.proto",
           "spec/proto/defaults.proto",
           "spec/proto/any.proto",
           "spec/proto/enumerations.proto"
       ], function(err, protos) {
         shaft.load(protos.nested.collections);
         shaft.load(protos.nested.models);
+        shaft.load(protos.nested.nested);
         shaft.load(protos.nested.repeated);
         shaft.load(protos.nested.defaults);
         shaft.load(protos.nested.any);

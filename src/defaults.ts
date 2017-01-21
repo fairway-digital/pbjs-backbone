@@ -39,7 +39,15 @@ namespace shaft.builder {
         } else if (Enum) {
           return Enum;
         } else {
-          return field.parent.nested[name].valuesById[0];
+          if (field.parent.nested) {
+            return field.parent.nested[name].valuesById[0];
+          } else {
+            let lookupType = field.root.lookupType(field.parent.fields[field.name].type);
+            let IF = shaft.model.build(lookupType);
+            shaft.model.push("." + field.parent.fields[field.name].type, IF);
+
+            return new IF();
+          }
         }
       }
   }
@@ -47,11 +55,13 @@ namespace shaft.builder {
   export function defaults(message: any): any {
     let defaults = {};
 
-    Object.keys(message.fields).forEach((fieldName) => {
-      const field = message.fields[fieldName];
+    if (message.fields) {
+      Object.keys(message.fields).forEach((fieldName) => {
+        const field = message.fields[fieldName];
 
-      defaults[field.name] = buildDefault(field);
-    });
+        defaults[field.name] = buildDefault(field);
+      });
+    }
 
     return defaults;
   }

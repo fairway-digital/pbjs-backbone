@@ -18,8 +18,8 @@ namespace shaft.model {
     return store.get(fullName);
   }
 
-  export function push(protoObj: any, classObj: any) {
-    store.push(protoObj.fullName, classObj);
+  export function push(key: string, classObj: any) {
+    store.push(key, classObj);
   }
 
   export function build(pbjsObj: any) {

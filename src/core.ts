@@ -4,9 +4,7 @@
 
 namespace shaft {
 
-  export function load(root: any): void {
-    const objects = root.nested;
-
+  function loadObj(objects: any) {
     Object.keys(objects).forEach((msg) => {
       const pbjsObj = objects[msg];
 
@@ -15,9 +13,25 @@ namespace shaft {
       } else {
         const Class = shaft.model.build(pbjsObj);
 
-        shaft.model.push(pbjsObj, Class);
+        if (pbjsObj.fields) {
+          Object.keys(pbjsObj.fields).forEach((f) => {
+            if (!shaft.utils.isScalarType(pbjsObj.fields[f])
+                &&  !shaft.utils.isEnum(pbjsObj.fields[f])) {
+                  loadObj(pbjsObj.fields);
+                }
+          });
+        }
+
+        shaft.model.push(pbjsObj.fullName, Class);
       }
     });
+  }
+
+  export function load(root: any): void {
+    const objects = root.nested;
+
+    loadObj(objects);
+
   }
 
 }

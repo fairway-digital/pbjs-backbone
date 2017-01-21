@@ -16,5 +16,5 @@ message MessageContainer {
 }
 
 message MessageContainer2 {
-  ImportedMessage importedMessage = 1;
+  imported.ImportedMessage importedMessage = 1;
 }

@@ -1,9 +1,9 @@
-# WORK IN PROGRESS
-
 # Travis
 
 [![Build Status](https://travis-ci.org/fairway-digital/shaft.svg?branch=master)](https://travis-ci.org/fairway-digital/shaft)
 [![Dependencies](https://david-dm.org/fairway-digital/shaft.svg)](https://david-dm.org/fairway-digital/shaft)
+
+# /!\ WORK IN PROGRESS
 
 # What
 
@@ -34,4 +34,8 @@
   Code coverage using [istanbuljs](https://github.com/gotwarlost/istanbul)
 
   ``` npm run coverage ```
+  
+  ## Versionning
+  
+  Use [semver](http://semver.org/)
 

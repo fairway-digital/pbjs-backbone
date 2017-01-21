@@ -4,6 +4,18 @@
 
 namespace shaft {
 
+  function loadFieldsObj(pbjsObj: any) {
+    Object.keys(pbjsObj.fields).forEach((f) => {
+      const field = pbjsObj.fields[f];
+      const isFieldScalar = shaft.utils.isScalarType(field);
+      const isFieldEnum = shaft.utils.isEnum(field);
+
+      if (!isFieldScalar && !isFieldEnum) {
+        loadObj(pbjsObj.fields);
+      }
+    });
+  }
+
   function loadObj(objects: any) {
     Object.keys(objects).forEach((msg) => {
       const pbjsObj = objects[msg];
@@ -14,12 +26,7 @@ namespace shaft {
         const Class = shaft.model.build(pbjsObj);
 
         if (pbjsObj.fields) {
-          Object.keys(pbjsObj.fields).forEach((f) => {
-            if (!shaft.utils.isScalarType(pbjsObj.fields[f])
-                &&  !shaft.utils.isEnum(pbjsObj.fields[f])) {
-                  loadObj(pbjsObj.fields);
-                }
-          });
+          loadFieldsObj(pbjsObj);
         }
 
         shaft.model.push(pbjsObj.fullName, Class);
@@ -28,10 +35,7 @@ namespace shaft {
   }
 
   export function load(root: any): void {
-    const objects = root.nested;
-
-    loadObj(objects);
-
+    loadObj(root.nested);
   }
 
 }

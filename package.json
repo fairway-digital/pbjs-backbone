@@ -1,5 +1,5 @@
 {
-  "name": "shaft",
+  "name": "@fairway-digital/shaft",
   "version": "1.1.0",
   "description": "From Protocol buffer, generate Backbone Model and Collections (statically and dynamically).",
   "keywords": [

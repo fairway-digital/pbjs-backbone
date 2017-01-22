@@ -38,4 +38,9 @@ namespace shaft {
     loadObj(root.nested);
   }
 
+  export function loadAll(protos: any): void {
+    for (let p in protos.nested) {
+      shaft.load(protos.nested[p]);
+    }
+  }
 }

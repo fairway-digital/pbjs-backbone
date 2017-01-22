@@ -27,6 +27,9 @@
           "spec/proto/any.proto",
           "spec/proto/enumerations.proto"
       ], function(err, protos) {
+        if (err) {
+          console.error("proto parse error", err);
+        }
 
         for (var p in protos.nested) {
           shaft.load(protos.nested[p]);

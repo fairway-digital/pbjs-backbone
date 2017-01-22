@@ -1,7 +1,12 @@
 {
-  "name": "protobuf-backbone",
+  "name": "shaft",
   "version": "1.0.0",
-  "description": "",
+  "description": "From Protocol buffer, generate Backbone Model and Collections (statically and dynamically).",
+  "keywords": [
+    "browser",
+    "backbone",
+    "protobufjs"
+  ],
   "main": "index.js",
   "scripts": {
     "build": "tsc -p .",
@@ -9,7 +14,11 @@
     "coverage": "testem -f testem.js",
     "uglify": "uglifyjs dist/shaft.js -o dist/shaft.min.js --source-map dist/shaft.min.js.map"
   },
-  "author": "",
+  "author": "Adrien Frediani <frediani.adrien@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fairway-digital/shaft"
+  },
   "license": "ISC",
   "dependencies": {
     "@types/es6-promise": "0.0.32",
@@ -29,5 +38,8 @@
     "tslint": "^4.3.1",
     "typescript": "^2.1.5",
     "uglify-js": "^2.7.5"
-  }
+  },
+  "files": [
+    "dist/shaft.js"
+  ]
 }

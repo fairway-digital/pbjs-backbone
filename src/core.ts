@@ -1,4 +1,6 @@
 /// <reference path="../node_modules/@types/backbone/index.d.ts" />
+/// <reference path="../node_modules/@types/es6-promise/index.d.ts" />
+/// <reference path="../node_modules/@types/node/index.d.ts" />
 /// <reference path="defaults.ts" />
 /// <reference path="utils.ts" />
 

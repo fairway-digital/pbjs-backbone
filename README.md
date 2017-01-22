@@ -11,14 +11,6 @@
 
 [Features/Issue list](https://github.com/fairway-digital/shaft/issues?q=is%3Aissue+milestone%3Av1.0.0+is%3Aclosed)
 
-# What
-
-  * From Protocol buffer, generate Backbone Model and Collections (statically and dynamically).
-  Model and Collections should be able to automatically:
-  * Be initialize with defaults
-  * Able to be validated (required fields, types etc..)
-  * Synchonized (using services)
-
 # How
 
   * From [protocol buffer specs](https://developers.google.com/protocol-buffers/).

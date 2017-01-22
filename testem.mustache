@@ -27,13 +27,10 @@
           "spec/proto/any.proto",
           "spec/proto/enumerations.proto"
       ], function(err, protos) {
-        shaft.load(protos.nested.collections);
-        shaft.load(protos.nested.models);
-        shaft.load(protos.nested.nested);
-        shaft.load(protos.nested.repeated);
-        shaft.load(protos.nested.defaults);
-        shaft.load(protos.nested.any);
-        shaft.load(protos.nested.enumerations);
+
+        for (var p in protos.nested) {
+          shaft.load(protos.nested[p]);
+        }
 
         runSpecs();
       });

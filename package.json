@@ -12,7 +12,8 @@
     "build": "tsc -p .",
     "test": "testem",
     "coverage": "testem -f testem.js",
-    "uglify": "uglifyjs dist/shaft.js -o dist/shaft.min.js --source-map dist/shaft.min.js.map"
+    "uglify": "uglifyjs dist/shaft.js -o dist/shaft.min.js --source-map dist/shaft.min.js.map",
+    "tsdoc": "typedoc --out documentation/tsdoc ./src"
   },
   "author": "Adrien Frediani <frediani.adrien@gmail.com>",
   "repository": {

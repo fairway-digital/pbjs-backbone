@@ -31,9 +31,7 @@
           console.error("proto parse error", err);
         }
 
-        for (var p in protos.nested) {
-          shaft.load(protos.nested[p]);
-        }
+        shaft.loadAll(protos);
 
         runSpecs();
       });

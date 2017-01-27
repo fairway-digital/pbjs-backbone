@@ -35,6 +35,13 @@ Shaft, using [proto js](http://dcode.io/protobuf.js/) generates [Backbone](http:
 
 # Usage
 
+## Installation
+
+Shaft.js is directly available from npm.
+```
+npm install shaft.js
+```
+
 # Examples
 
 # Documentation

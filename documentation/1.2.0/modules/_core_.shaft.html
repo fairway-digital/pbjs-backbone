@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>enumeration | shaft.js</title>
+	<title>shaft | shaft.js</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,16 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_enum_.html">&quot;enum&quot;</a>
+					<a href="_core_.html">&quot;core&quot;</a>
 				</li>
 				<li>
-					<a href="_enum_.shaft.html">shaft</a>
-				</li>
-				<li>
-					<a href="_enum_.shaft.enumeration.html">enumeration</a>
+					<a href="_core_.shaft.html">shaft</a>
 				</li>
 			</ul>
-			<h1>Module enumeration</h1>
+			<h1>Module shaft</h1>
 		</div>
 	</div>
 </header>
@@ -76,80 +73,106 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Variables</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_enum_.shaft.enumeration.html#store" class="tsd-kind-icon">store</a></li>
-							</ul>
-						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_enum_.shaft.enumeration.html#get" class="tsd-kind-icon">get</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_enum_.shaft.enumeration.html#push" class="tsd-kind-icon">push</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_core_.shaft.html#load" class="tsd-kind-icon">load</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_core_.shaft.html#loadall" class="tsd-kind-icon">load<wbr>All</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_core_.shaft.html#loadfieldsobj" class="tsd-kind-icon">load<wbr>Fields<wbr>Obj</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_core_.shaft.html#loadobj" class="tsd-kind-icon">load<wbr>Obj</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-					<a name="store" class="tsd-anchor"></a>
-					<h3>store</h3>
-					<div class="tsd-signature tsd-kind-icon">store<span class="tsd-signature-symbol">:</span> <a href="../classes/_utils_.shaft.utils.memorystore.html" class="tsd-signature-type">MemoryStore</a><span class="tsd-signature-symbol"> =&nbsp;new MemoryStore()</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/frediana/protobufjs-backbone/blob/21c6db0/src/enum.ts#L6">enum.ts:6</a></li>
-						</ul>
-					</aside>
-				</section>
-			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="get" class="tsd-anchor"></a>
-					<h3>get</h3>
+					<a name="load" class="tsd-anchor"></a>
+					<h3>load</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>pkg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">load<span class="tsd-signature-symbol">(</span>root<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frediana/protobufjs-backbone/blob/21c6db0/src/enum.ts#L8">enum.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/frediana/protobufjs-backbone/blob/d143567/src/core.ts#L39">core.ts:39</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>pkg: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<h5>root: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="push" class="tsd-anchor"></a>
-					<h3>push</h3>
+					<a name="loadall" class="tsd-anchor"></a>
+					<h3>load<wbr>All</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">push<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">load<wbr>All<span class="tsd-signature-symbol">(</span>protos<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frediana/protobufjs-backbone/blob/21c6db0/src/enum.ts#L14">enum.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/frediana/protobufjs-backbone/blob/d143567/src/core.ts#L43">core.ts:43</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+									<h5>protos: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="loadfieldsobj" class="tsd-anchor"></a>
+					<h3>load<wbr>Fields<wbr>Obj</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">load<wbr>Fields<wbr>Obj<span class="tsd-signature-symbol">(</span>pbjsObj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/frediana/protobufjs-backbone/blob/d143567/src/core.ts#L9">core.ts:9</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>pbjsObj: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="loadobj" class="tsd-anchor"></a>
+					<h3>load<wbr>Obj</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">load<wbr>Obj<span class="tsd-signature-symbol">(</span>objects<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/frediana/protobufjs-backbone/blob/d143567/src/core.ts#L21">core.ts:21</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>objects: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -168,14 +191,17 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_enum_.shaft.enumeration.html#store" class="tsd-kind-icon">store</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_core_.shaft.html#load" class="tsd-kind-icon">load</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_enum_.shaft.enumeration.html#get" class="tsd-kind-icon">get</a>
+						<a href="_core_.shaft.html#loadall" class="tsd-kind-icon">load<wbr>All</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_enum_.shaft.enumeration.html#push" class="tsd-kind-icon">push</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_core_.shaft.html#loadfieldsobj" class="tsd-kind-icon">load<wbr>Fields<wbr>Obj</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_core_.shaft.html#loadobj" class="tsd-kind-icon">load<wbr>Obj</a>
 					</li>
 				</ul>
 			</nav>

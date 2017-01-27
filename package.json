@@ -13,7 +13,7 @@
     "test": "testem",
     "coverage": "testem -f testem.js",
     "uglify": "uglifyjs dist/shaft.js -o dist/shaft.min.js --source-map dist/shaft.min.js.map",
-    "tsdoc": "typedoc --out documentation/tsdoc ./src"
+    "tsdoc": "typedoc --out documentation/1.2.0 ./src"
   },
   "author": "Adrien Frediani <frediani.adrien@gmail.com>",
   "repository": {

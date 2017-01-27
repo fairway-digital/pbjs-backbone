@@ -5,8 +5,9 @@
 
 # Features
 
-  * From [protocol buffer specs](https://developers.google.com/protocol-buffers/).
-  * Using [proto js](http://dcode.io/protobuf.js/) lib.
+From [protocol buffer specs](https://developers.google.com/protocol-buffers/)
+and using [proto js](http://dcode.io/protobuf.js/) lib generates
+[Backbone](http://backbonejs.org/) Models and Collections.
 
 # Contents
 

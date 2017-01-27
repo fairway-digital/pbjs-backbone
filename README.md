@@ -48,4 +48,47 @@ npm install shaft.js
 
 # Building
 
+To build the library or its components yourself, clone it from GitHub and install the development dependencies:
 
+```
+$> git clone https://github.com/fairway-digital/shaft
+$> cd shaft.js
+$> npm install
+```
+
+
+Building version to `dist/`:
+
+```
+$> npm run build
+```
+
+Building production version to `dist/`:
+
+```
+$> npm run uglify
+```
+
+Running tests in CI:
+
+```
+$> npm test
+```
+
+Running tests in DEV:
+
+```
+$> testem
+```
+
+Generate Code Coverage report to `coverage/lcov-report/index.html`:
+
+```
+$> npm run coverage
+```
+
+Building the documentation to `documentation/`:
+
+```
+$> npm run tsdoc
+```

@@ -23,7 +23,7 @@ Shaft, using [proto js](http://dcode.io/protobuf.js/) generates [Backbone](http:
 
 * [Usage](#usage)<br />
   How to include protobuf.js in your project.
-  
+
 * [Examples](#examples)<br />
   A few examples to get you started.
 
@@ -45,6 +45,8 @@ npm install shaft.js
 # Examples
 
 # Documentation
+
+[API documentation](http://fairway.digital/dev/shaft/doc/1.2.0/)
 
 # Building
 

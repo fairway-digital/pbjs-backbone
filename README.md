@@ -44,6 +44,96 @@ npm install shaft.js
 
 # Examples
 
+## Requisite
+
+Proto definitions must be loaded using [Protobuf-js](https://github.com/dcodeIO/protobuf.js), [cf examples here](https://github.com/dcodeIO/protobuf.js#using-proto-files).
+
+## Loading
+
+Shaft Models/Collections must be loaded from those proto definitions using ```loadAll``` method.
+
+```protobuf
+protobuf.load([
+    "proto/pga-tour.proto",
+    "proto/european-tour.proto"
+], function(err, protos) {
+  shaft.loadAll(protos);
+});
+```
+
+If you only want to load some of the proto, then just use ```load```
+```js
+protobuf.load([
+    "proto/pga_tour.proto",
+    "proto/european_tour.proto"
+], function(err, protos) {
+  shaft.load(protos.pga_tour);
+});
+```
+
+## Backbone Models and Collections
+
+Given the following proto:
+```protobuf
+package pga;
+syntax = "proto3";
+
+message Player {
+    string name = 1;
+    int rank = 2;
+}
+```
+
+Using shaft.js you can simply use Player Message as a plain Backbone Model:
+```js
+const Player = shaft.model.get("pga", "Player");
+const tiger = new Player();
+```
+
+Same goes for Collections:
+```js
+const Players = shaft.model.get("pga", "Player");
+const pgaAmericaPlayers = new Players();
+pgaAmericaPlayers.add({
+  name: "Jordan Spieth",
+  rank: 1
+});
+pgaAmericaPlayers.add({
+  name: "Phil Mickelson",
+  rank: 2
+});
+```
+
+## Enumerations
+
+```protobuf
+package golf;
+syntax = "proto3";
+
+enum ShotKind {
+  PUTT:1,
+  DRIVE: 2
+}
+
+message Player {
+    string name = 1
+    ShotKind speciality = 2;
+}
+```
+
+Enumerations can be imported as plain objects:
+```js
+const ShotKind = shaft.enumeration.get("golf", "ShotKind");
+// ShotKind = { PUTT:1, DRIVE: 2 }
+```
+
+But is automacally attached to a Message when defined as field.
+```js
+const Player = shaft.model.get("golf", "Player");
+const dustin = new Player({ name: "Dustin Jonhson", speciality: "DRIVE" });
+const jordan = new Player({ name: "Jordan Spieth", speciality: "PUTT" });
+```
+
 # Documentation
 
 [API documentation](http://fairway.digital/dev/shaft/doc/1.2.0/)

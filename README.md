@@ -52,7 +52,7 @@ Proto definitions must be loaded using [Protobuf-js](https://github.com/dcodeIO/
 
 Shaft Models/Collections must be loaded from those proto definitions using ```loadAll``` method.
 
-```protobuf
+```js
 protobuf.load([
     "proto/pga-tour.proto",
     "proto/european-tour.proto"

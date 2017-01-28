@@ -101,7 +101,76 @@
 				<p>Shaft.js is directly available from npm.</p>
 				<pre><code>npm <span class="hljs-keyword">install</span> shaft.js
 </code></pre><h1 id="examples">Examples</h1>
+				<h2 id="requisite">Requisite</h2>
+				<p>Proto definitions must be loaded using <a href="https://github.com/dcodeIO/protobuf.js">Protobuf-js</a>, <a href="https://github.com/dcodeIO/protobuf.js#using-proto-files">cf examples here</a>.</p>
+				<h2 id="loading">Loading</h2>
+				<p>Shaft Models/Collections must be loaded from those proto definitions using <code>loadAll</code> method.</p>
+				<pre><code class="lang-js">protobuf.load([
+    <span class="hljs-string">"proto/pga-tour.proto"</span>,
+    <span class="hljs-string">"proto/european-tour.proto"</span>
+], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, protos</span>) </span>{
+  shaft.loadAll(protos);
+});
+</code></pre>
+				<p>If you only want to load some of the proto, then just use <code>load</code></p>
+				<pre><code class="lang-js">protobuf.load([
+    <span class="hljs-string">"proto/pga_tour.proto"</span>,
+    <span class="hljs-string">"proto/european_tour.proto"</span>
+], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, protos</span>) </span>{
+  shaft.load(protos.pga_tour);
+});
+</code></pre>
+				<h2 id="backbone-models-and-collections">Backbone Models and Collections</h2>
+				<p>Given the following proto:</p>
+				<pre><code class="lang-protobuf"><span class="hljs-keyword">package</span> pga;
+syntax = <span class="hljs-string">"proto3"</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">Player</span> </span>{
+    <span class="hljs-built_in">string</span> name = <span class="hljs-number">1</span>;
+    int rank = <span class="hljs-number">2</span>;
+}
+</code></pre>
+				<p>Using shaft.js you can simply use Player Message as a plain Backbone Model:</p>
+				<pre><code class="lang-js"><span class="hljs-keyword">const</span> Player = shaft.model.get(<span class="hljs-string">"pga"</span>, <span class="hljs-string">"Player"</span>);
+<span class="hljs-keyword">const</span> tiger = <span class="hljs-keyword">new</span> Player();
+</code></pre>
+				<p>Same goes for Collections:</p>
+				<pre><code class="lang-js"><span class="hljs-keyword">const</span> Players = shaft.model.get(<span class="hljs-string">"pga"</span>, <span class="hljs-string">"Player"</span>);
+<span class="hljs-keyword">const</span> pgaAmericaPlayers = <span class="hljs-keyword">new</span> Players();
+pgaAmericaPlayers.add({
+  <span class="hljs-attr">name</span>: <span class="hljs-string">"Jordan Spieth"</span>,
+  <span class="hljs-attr">rank</span>: <span class="hljs-number">1</span>
+});
+pgaAmericaPlayers.add({
+  <span class="hljs-attr">name</span>: <span class="hljs-string">"Phil Mickelson"</span>,
+  <span class="hljs-attr">rank</span>: <span class="hljs-number">2</span>
+});
+</code></pre>
+				<h2 id="enumerations">Enumerations</h2>
+				<pre><code class="lang-protobuf"><span class="hljs-keyword">package</span> golf;
+syntax = <span class="hljs-string">"proto3"</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">ShotKind</span> </span>{
+  PUTT:1,
+  DRIVE: 2
+}
+
+message Player {
+    string name = <span class="hljs-number">1</span>
+    ShotKind speciality = <span class="hljs-number">2</span>;
+}
+</code></pre>
+				<p>Enumerations can be imported as plain objects:</p>
+				<pre><code class="lang-js"><span class="hljs-keyword">const</span> ShotKind = shaft.enumeration.get(<span class="hljs-string">"golf"</span>, <span class="hljs-string">"ShotKind"</span>);
+<span class="hljs-comment">// ShotKind = { PUTT:1, DRIVE: 2 }</span>
+</code></pre>
+				<p>But is automacally attached to a Message when defined as field.</p>
+				<pre><code class="lang-js"><span class="hljs-keyword">const</span> Player = shaft.model.get(<span class="hljs-string">"golf"</span>, <span class="hljs-string">"Player"</span>);
+<span class="hljs-keyword">const</span> dustin = <span class="hljs-keyword">new</span> Player({ <span class="hljs-attr">name</span>: <span class="hljs-string">"Dustin Jonhson"</span>, <span class="hljs-attr">speciality</span>: <span class="hljs-string">"DRIVE"</span> });
+<span class="hljs-keyword">const</span> jordan = <span class="hljs-keyword">new</span> Player({ <span class="hljs-attr">name</span>: <span class="hljs-string">"Jordan Spieth"</span>, <span class="hljs-attr">speciality</span>: <span class="hljs-string">"PUTT"</span> });
+</code></pre>
 				<h1 id="documentation">Documentation</h1>
+				<p><a href="http://fairway.digital/dev/shaft/doc/1.2.0/">API documentation</a></p>
 				<h1 id="building">Building</h1>
 				<p>To build the library or its components yourself, clone it from GitHub and install the development dependencies:</p>
 				<pre><code><span class="hljs-variable">$&gt;</span> git clone <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/github.com/fairway</span>-digital/shaft

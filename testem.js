@@ -9,7 +9,7 @@ var server;
 module.exports = {
 	serve_files: [
 		'instrumented/*.js',
-    'dist/spec/**.spec.js'
+    'dist/spec/*.spec.js'
 	],
 	src_files: [
 	],

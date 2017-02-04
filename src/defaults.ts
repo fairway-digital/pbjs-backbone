@@ -52,6 +52,12 @@ namespace shaft.builder {
       }
   }
 
+  /**
+   * Build default value for each fields of a Proto Message.
+   *
+   * @param message The proto Message
+   * @returns Plain object containing for each field its default value.
+   */
   export function defaults(message: any): any {
     let defaults = {};
 

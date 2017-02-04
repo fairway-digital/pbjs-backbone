@@ -9,7 +9,7 @@ var server;
 module.exports = {
 	serve_files: [
 		'instrumented/*.js',
-    'dist/spec/**.spec.js'
+    'dist/spec/*.spec.js'
 	],
 	src_files: [
 	],
@@ -75,5 +75,5 @@ module.exports = {
 
 	test_page: 'testem.mustache',
 	launch_in_dev: ['chrome'],
-	launch_in_ci: ['chrome']
+	launch_in_ci: ['PhantomJS']
 };

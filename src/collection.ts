@@ -20,6 +20,13 @@ namespace shaft.collection {
     return Collection;
   }
 
+  /**
+   * Retrive a Collection from the Collections store.
+   *
+   * @param pkg Package name of the Collection to retrieve.
+   * @param obj Name of the Collection to retrieve.
+   * @return Collection
+   */
   export function get(pkg: string, name: string): ShaftCollection {
     const fullName = utils.fullName(pkg, name);
 

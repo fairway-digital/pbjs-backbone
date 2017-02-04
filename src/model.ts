@@ -18,10 +18,23 @@ namespace shaft.model {
     return store.get(fullName);
   }
 
+  /**
+   * push a backbone model into the models store.
+   *
+   * @param key key used to store.
+   * @param classobj the model to store.
+   */
   export function push(key: string, classObj: any) {
     store.push(key, classObj);
   }
 
+
+  /**
+   * Build a Backbone Model based on Message definition.
+   *
+   * @param pkgsObj Protobuf definition.
+   * @returns Freshly backed Bacbone Class.
+   */
   export function build(pbjsObj: any) {
     class Class extends Backbone.Model {
       defaults() {

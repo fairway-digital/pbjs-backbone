@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/fairway-digital/shaft.svg?branch=master)](https://travis-ci.org/fairway-digital/shaft)
+[![Coverage Status](https://coveralls.io/repos/github/fairway-digital/shaft/badge.svg?branch=release%2F1.3.0)](https://coveralls.io/github/fairway-digital/shaft?branch=release%2F1.3.0)
 [![Dependencies](https://david-dm.org/fairway-digital/shaft.svg)](https://david-dm.org/fairway-digital/shaft)
 [![npm](https://img.shields.io/npm/v/shaft.js.svg)](https://www.npmjs.com/package/shaft.js)
 

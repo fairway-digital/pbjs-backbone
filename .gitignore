@@ -4,3 +4,5 @@ instrumented/
 coverage/
 coverage-*
 npm-debug*
+.coveralls.yml
+spec/shaft.js

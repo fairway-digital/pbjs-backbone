@@ -10,6 +10,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -p .",
+    "build-test": "cp dist/shaft.js spec && tsc -p spec",
+    "build-all": "npm run build && npm run build-test",
     "test": "testem",
     "test-ci": "testem ci -f testem.js",
     "coverage": "testem -f testem.js",

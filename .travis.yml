@@ -1,4 +1,4 @@
 language: node_js
 node_js:
   - "7"
-script: npm run build && npm run test-ci
+script: npm run build-all && npm run test-ci

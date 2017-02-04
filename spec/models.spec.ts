@@ -1,5 +1,5 @@
 /// <reference path="../node_modules/@types/jasmine/index.d.ts" />
-/// <reference path="../dist/shaft.js" />
+/// <reference path="shaft.js" />
 
 describe("#shaft.model", () => {
   describe(".get", () => {

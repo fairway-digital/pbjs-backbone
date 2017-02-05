@@ -1,6 +1,6 @@
 {
   "name": "shaft.js",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "From Protocol buffer, generate Backbone Model and Collections (statically and dynamically).",
   "keywords": [
     "browser",

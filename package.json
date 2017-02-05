@@ -45,6 +45,7 @@
     "uglify-js": "^2.7.5"
   },
   "files": [
-    "dist/shaft.js"
+    "dist/shaft.js",
+    "index.d.ts"
   ]
 }

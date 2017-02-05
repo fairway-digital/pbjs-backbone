@@ -8,8 +8,7 @@ var server;
 
 module.exports = {
 	serve_files: [
-		'instrumented/*.js',
-    'dist/spec/*.spec.js'
+		'instrumented/*.js'
 	],
 	src_files: [
 	],

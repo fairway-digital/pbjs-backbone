@@ -9,6 +9,7 @@
   ],
   "main": "index.js",
   "scripts": {
+    "clean": "rm -rf dist",
     "build": "tsc -p .",
     "build-test": "tsc -p spec",
     "build-all": "npm run build && npm run build-test",

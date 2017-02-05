@@ -1,5 +1,5 @@
 /// <reference path="../node_modules/@types/jasmine/index.d.ts" />
-/// <reference path="shaft.js" />
+/// <reference path="../shaft.d.ts" />
 
 describe("#shaft.model Any field type", () => {
 
